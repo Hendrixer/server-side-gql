@@ -23,9 +23,8 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 const server = new ApolloServer({
-  schema: addMocksToSchema({
-    schema: makeExecutableSchema({ typeDefs }),
-  }),
+  typeDefs,
+  resolvers,
   plugins,
 })
 
