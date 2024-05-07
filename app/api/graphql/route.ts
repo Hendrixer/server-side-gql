@@ -7,6 +7,7 @@ import {
 } from '@apollo/server/plugin/landingPage/default'
 import { schema } from './schema'
 import { resolvers } from './resolvers'
+import { getUserFromToken } from '@/utils/auth'
 
 let plugins = []
 if (process.env.NODE_ENV === 'production') {
@@ -26,7 +27,16 @@ const server = new ApolloServer({
   typeDefs: schema,
 })
 
-const handler = startServerAndCreateNextHandler<NextRequest>(server, {})
+const handler = startServerAndCreateNextHandler<NextRequest>(server, {
+  context: async (req) => {
+    const user = await getUserFromToken(req.headers.get('authorization') ?? '')
+
+    return {
+      req,
+      user,
+    }
+  },
+})
 
 export async function GET(request: NextRequest) {
   return handler(request)
