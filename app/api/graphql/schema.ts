@@ -22,13 +22,14 @@ export const schema = `#graphql
     INPROGRESS
     BACKLOG
   }
-
+  
 
   type User {
     id: ID!
     email: String!
     createdAt: String!
     token: String
+    issues: [Issue]!
   }
 
   input AuthInput {
@@ -36,8 +37,13 @@ export const schema = `#graphql
     password: String!
   }
 
+  input IssuesFilterInput {
+    statuses: [IssueStatus!]
+  }
+
   type Query {
     me: User
+    issues(input: IssuesFilterInput): [Issue]!
   }
 
   type Mutation {
