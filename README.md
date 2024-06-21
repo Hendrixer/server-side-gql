@@ -1,8 +1,16 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+[![Frontend Masters](https://static.frontendmasters.com/assets/brand/logos/full.png)](https://frontendmasters.com/courses/web-app-testing/)
+
+This repo is a companion to the [Server-Side GraphQL course](https://frontendmasters.com/courses/server-graphql-nextjs/) on Frontend Masters.
 
 ## Getting Started
 
-First, run the development server:
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+Install the repo dependencies:
+
+```npm install```
+
+Run the development server:
 
 ```bash
 npm run dev
