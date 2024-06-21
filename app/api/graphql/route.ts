@@ -23,8 +23,9 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 const server = new ApolloServer({
-  typeDefs,
-  resolvers,
+  schema: addMocksToSchema({
+    schema: makeExecutableSchema({ typeDefs }),
+  }),
   plugins,
 })
 
@@ -36,4 +37,4 @@ export async function GET(request: NextRequest) {
 
 export async function POST(request: NextRequest) {
   return handler(request)
-}
+} 
