@@ -12,10 +12,13 @@ This course repository requires Node version 20+ and a [TursoDB account](https:/
 2. Checkout the `server/demo` branch
 3. Install the Dependencies with `npm install`
 4. Create a [Turso](https://turso.tech/) DB account (free)
-   - Follow the instructions to make a new DB (you don’t need a replica)
-   - Follow instructions to download the CLI and authenticate
-   - Using the CLI, generate a token for your db with this command `turso db tokens create [your db name]`
-5. Create a `.env` file on the root and add these environment variables:
+   - Follow the instructions to make a new DB
+     - Create a new Group (default is fine) and choose a location
+     - Create a new Database
+   - Create a Database Token (Either through Turso website or the CLI)
+     - Using Turso Website: Click "Create Database Token"
+     - Using [the CLI](https://docs.turso.tech/cli/installation): Generate a token for your db with this command `turso db tokens create [your db name]`
+5. Create a `.env` file on the root and add these environment variables. If you need the URL, you can use the "Copy URL" button in the Overview tab on Turso:
 
 ```bash
 TURSO_CONNECTION_URL="your turso db url"
